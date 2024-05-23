@@ -43,13 +43,14 @@ python main.py
 ├── data
 │   ├── wdbc.data
 ├── main.py
+├── lazy_predict.py
 ├── requirements.txt
 └── README.md
 ``` 
 
 ## Output
 
-The script evaluates the performance of each model using cross-validation and outputs the classification report and confusion matrix for each algorithm.
+The `main` script evaluates the performance of each model using cross-validation and outputs the classification report and confusion matrix for each algorithm.
 
 Example output:
 ```
@@ -67,6 +68,43 @@ weighted avg       0.96      0.96      0.96       114
 Confusion Matrix:
 [[69  2]
  [ 2 41]]
+```
+
+The `lazy_predict` script uses the `LazyPredict` library to evaluate the performance of multiple models at once.
+
+Example output:
+```
+100%|██████████| 30/30 [00:00<00:00,  1.07it/s]
+                               Accuracy  Balanced Accuracy  ROC AUC  F1 Score  Time Taken
+Model
+KNeighborsClassifier               0.96               0.96     0.96      0.96        0.02
+SVC                                0.96               0.96     0.96      0.96        0.02
+NuSVC                              0.96               0.96     0.96      0.96        0.02
+DecisionTreeClassifier             0.95               0.95     0.95      0.95        0.01
+ExtraTreeClassifier                0.95               0.95     0.95      0.95        0.01
+RandomForestClassifier             0.95               0.95     0.95      0.95        0.12
+ExtraTreesClassifier               0.95               0.95     0.95      0.95        0.09
+AdaBoostClassifier                 0.95               0.95     0.95      0.95        0.08
+GradientBoostingClassifier         0.95               0.95     0.95      0.95        0.07
+LGBMClassifier                     0.95               0.95     0.95      0.95        0.04
+XGBClassifier                      0.95               0.95     0.95      0.95        0.06
+BaggingClassifier                  0.95               0.95     0.95      0.95        0.03
+CalibratedClassifierCV             0.95               0.95     0.95      0.95        0.04
+LinearSVC                          0.95               0.95     0.95      0.95        0.02
+RidgeClassifierCV                  0.95               0.95     0.95      0.95        0.01
+RidgeClassifier                    0.95               0.95     0.95      0.95        0.01
+LogisticRegression                 0.95               0.95     0.95      0.95        0.02
+SGDClassifier                      0.95               0.95     0.95      0.95        0.01
+Perceptron                         0.95               0.95     0.95      0.95        0.01
+PassiveAggressiveClassifier        0.95               0.95     0.95      0.95        0.01
+BernoulliNB                        0.95               0.95     0.95      0.95        0.01
+GaussianNB                         0.95               0.95     0.95      0.95        0.01
+LinearDiscriminantAnalysis         0.95               0.95     0.95      0.95        0.01
+QuadraticDiscriminantAnalysis      0.95               0.95     0.95      0.95        0.01
+LabelPropagation                   0.95               0.95     0.95      0.95        0.02
+LabelSpreading                     0.95               0.95     0.95      0.95        0.02
+NearestCentroid                    0.95               0.95     0.95      0.95        0.01
+DummyClassifier                    0.61               0.50     0.50      0.61        0.01
 ```
 
 ## Contributing
