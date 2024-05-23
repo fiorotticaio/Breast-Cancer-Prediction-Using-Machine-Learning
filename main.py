@@ -41,6 +41,7 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
     y_pred = cross_val_predict(model, X_test, y_test, cv=10)
     # Print classification report and confusion matrix
     print(classification_report(y_test, y_pred))
+    print("\nConfusion Matrix:")
     print(confusion_matrix(y_test, y_pred))
     print("\n\n")
 
