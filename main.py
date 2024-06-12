@@ -8,6 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 import numpy as np
+import xgboost as xgb
 
 # Load the data
 data = pd.read_csv('data/wdbc.data', header=None)
@@ -64,3 +65,8 @@ evaluate_model(svm, X_train, X_test, y_train, y_test)
 print("Naive Bayes Results")
 nb = GaussianNB()
 evaluate_model(nb, X_train, X_test, y_train, y_test)
+
+# XGBoost
+print("XGBoost Results")
+xgb_model = xgb.XGBClassifier(random_state=42)
+evaluate_model(xgb_model, X_train, X_test, y_train, y_test)
