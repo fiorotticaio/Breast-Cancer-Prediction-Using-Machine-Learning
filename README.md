@@ -16,6 +16,7 @@ This project aims to classify breast cancer as malignant or benign using various
 - Decision Tree
 - Support Vector Machine (SVM)
 - Naive Bayes
+- XGBoost
 
 ## Installation
 
